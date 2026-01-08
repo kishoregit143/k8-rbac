@@ -1,0 +1,9 @@
+apiversion: rbac.authorization.k8s.io/v1
+kind: role
+metadata:
+  name: roboshop
+  namespace: roboshop-traines
+rules:
+ - apiGroup: [""] # "" means the core API group
+   resources: ["pods"]
+   verbs: ["get", "list", "watch"] 
