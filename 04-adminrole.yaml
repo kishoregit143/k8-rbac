@@ -7,3 +7,24 @@ rules:
  - apiGroup: ["*"] # "" means the core API group
    resources: ["*"]
    verbs: ["*"] 
+---
+# apiversion: rbac.authorization.k8s.io/v1
+# kind: cluster-role
+# metadata:
+#   name: roboshop-admin
+# rules:
+#  - apiGroup: ["*"] # "" means the core API group
+#    resources: ["*"]
+#    verbs: ["*"]  
+
+ apiversion: rbac.authorization.k8s.io/v1
+ kind: cluster-role
+ metadata:
+  name: roboshop-admin
+ rules:
+  - apiGroup: [" storage.k8s.io/v1"] # "" means the core API group
+    resources: [" storageclasses"]
+    verbs: [" get", "list", "watch"]  
+  - apiGroup: [""] # "" means the core API group
+    resources: ["persistentvolumes"]
+    verbs: [" get", "list", "watch"]  
