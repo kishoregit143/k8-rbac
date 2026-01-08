@@ -1,0 +1,21 @@
+apiversion: v1
+data:
+    mapRoles: |
+      - rolearn: arn:aws:iam::123456789012:role/KubernetesAdminRole
+        groups:
+          - system: bootstrapper
+          - system: nodes
+        username: system:node:{{EC2PrivateDNSName}}  
+    mapUsers: |
+      - groups:
+          - roobshoptraines
+        username: admin-user
+        userarn: arn:aws:iam::123456789012:user/AdminUser
+        username: lokesh
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-06-10T12:00:00Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1030"
+  uid: a81713
