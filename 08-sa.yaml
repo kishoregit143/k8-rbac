@@ -1,0 +1,12 @@
+apiversion: v1
+kind: serviceaccount
+metadata:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/Roboshop-Trainee-Role
+  creationTimestamp: "2024-06-10T12:00:00Z"
+  labels:
+    app.kubernetes.io/managed-by: eksctl
+  name: roboshop-reader
+  namespace: roboshop
+  resourceVersion: "1025"
+  uid: a81713  
